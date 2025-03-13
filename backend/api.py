@@ -7,6 +7,7 @@ fake_db = [
     {"email": "user1@example.com", "password": "1234"},
     {"email": "user2@example.com", "password": "5678"},
 ]
+tokens = {}
 
 
 @app.route("/login", methods=["POST"])
@@ -25,7 +26,9 @@ def login():
     )
 
     if user:
-        return jsonify({"message": "Login riuscito!", "token": "fake-jwt-token"}), 200
+        token = f"fake-token-{email}"
+        tokens[token] = email
+        return jsonify({"message": "Login riuscito!", "token": token}), 200
     else:
         return jsonify({"error": "Credenziali non valide"}), 401
 
@@ -51,6 +54,27 @@ def register():
     )
 
     return jsonify({"message": "Registrazione riuscita!"}), 201
+
+
+@app.route("/profile", methods=["GET"])
+def profile():
+    token = request.headers.get("Authorization")
+
+    if not token or token not in tokens:
+        return jsonify({"error": "Accesso negato, token mancante o non valido."}), 401
+
+    email = tokens[token]
+    user = next((u for u in fake_db if u["email"] == email), None)
+
+    if not user:
+        return jsonify({"error": "Utente non trovato"}), 404
+
+    return (
+        jsonify(
+            {"name": user["name"], "surname": user["surname"], "email": user["email"]}
+        ),
+        200,
+    )
 
 
 if __name__ == "__main__":
