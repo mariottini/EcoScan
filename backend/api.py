@@ -3,10 +3,28 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Using a fake db until real db is not ready
-fake_db = [
-    {"email": "user1@example.com", "password": "1234"},
-    {"email": "user2@example.com", "password": "5678"},
-]
+fake_db = {
+    "user": [
+        {
+            "id_user": 1,
+            "name": "Mario",
+            "surname": "Rossi",
+            "email": "mariorossi@example.com",
+            "password": "1234",
+            "id_city": 1,
+        }
+    ],
+    "scan": [{"id_scan": 1, "id_trash": 1, "id_user": 1}],
+    "trash": [
+        {
+            "id_trash": 1,
+            "name": "Bottiglia d'acqua",
+            "img": "img0001.png",
+            "description": "... Descrizione Bottiglia d'acqua ...",
+            "category": "plastica",
+        }
+    ],
+}
 tokens = {}
 
 
@@ -56,8 +74,8 @@ def register():
     return jsonify({"message": "Registrazione riuscita!"}), 201
 
 
-@app.route("/profile", methods=["GET"])
-def profile():
+@app.route("/get-user", methods=["GET"])
+def get_user():
     token = request.headers.get("Authorization")
 
     if not token or token not in tokens:
@@ -75,6 +93,16 @@ def profile():
         ),
         200,
     )
+
+
+@app.route("/get-trash/<int:id_trash>", methods=["GET"])
+def get_trash(id_trash):
+    trash = next((t for t in fake_db["trash"] if t["id_trash"] == id_trash), None)
+
+    if trash:
+        return jsonify(trash), 200
+    else:
+        return jsonify({"error": "Rifiuto non trovato"}), 404
 
 
 if __name__ == "__main__":
