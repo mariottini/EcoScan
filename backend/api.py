@@ -1,31 +1,17 @@
+import pymysql
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Using a fake db until real db is not ready
-fake_db = {
-    "user": [
-        {
-            "id_user": 1,
-            "name": "Mario",
-            "surname": "Rossi",
-            "email": "mariorossi@example.com",
-            "password": "1234",
-            "id_city": 1,
-        }
-    ],
-    "scan": [{"id_scan": 1, "id_trash": 1, "id_user": 1}],
-    "trash": [
-        {
-            "id_trash": 1,
-            "name": "Bottiglia d'acqua",
-            "img": "img0001.png",
-            "description": "... Descrizione Bottiglia d'acqua ...",
-            "category": "plastica",
-        }
-    ],
-}
-tokens = {}
+
+def get_db_connection():
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="ecoscan",
+        cursorclass=pymysql.cursors.DictCursor,
+    )
 
 
 @app.route("/login", methods=["POST"])
@@ -37,16 +23,32 @@ def login():
     if not email or not password:
         return jsonify({"error": "Campi obbligatori mancanti."}), 400
 
-    # Check if user exists in fake db
-    # next() returns the first user with correct email and password
-    user = next(
-        (u for u in fake_db if u["email"] == email and u["password"] == password), None
-    )
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT * FROM user WHERE email_user = %s AND password_user = %s",
+            (email, password),
+        )
+        user = cursor.fetchone()
+    connection.close()
 
     if user:
-        token = f"fake-token-{email}"
-        tokens[token] = email
-        return jsonify({"message": "Login riuscito!", "token": token}), 200
+        return (
+            jsonify(
+                {
+                    "message": "Login riuscito!",
+                    "token": "fake-jwt-token",
+                    "user": {
+                        "id": user["id_user"],
+                        "name": user["name_user"],
+                        "surname": user["surname_user"],
+                        "email": user["email_user"],
+                        "id_city": user["id_city"],
+                    },
+                }
+            ),
+            200,
+        )
     else:
         return jsonify({"error": "Credenziali non valide"}), 401
 
@@ -62,42 +64,55 @@ def register():
     if not name or not surname or not email or not password:
         return jsonify({"error": "Campi obbligatori mancanti."}), 400
 
-    # Check if user already exists in fake db
-    if any(u["email"] == email for u in fake_db):
-        return jsonify({"error": "L'utente esiste già."}), 409
-
-    # Add user in fake db
-    fake_db.append(
-        {"name": name, "surname": surname, "email": email, "password": password}
-    )
-
-    return jsonify({"message": "Registrazione riuscita!"}), 201
-
-
-@app.route("/get-user", methods=["GET"])
-def get_user():
-    token = request.headers.get("Authorization")
-
-    if not token or token not in tokens:
-        return jsonify({"error": "Accesso negato, token mancante o non valido."}), 401
-
-    email = tokens[token]
-    user = next((u for u in fake_db if u["email"] == email), None)
-
-    if not user:
-        return jsonify({"error": "Utente non trovato"}), 404
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "INSERT INTO user (name_user, surname_user, email_user, password_user, id_city) VALUES (%s, %s, %s, %s, %s)",
+            (name, surname, email, password, 0),
+        )
+        user_id = cursor.lastrowid
+    connection.commit()
+    connection.close()
 
     return (
         jsonify(
-            {"name": user["name"], "surname": user["surname"], "email": user["email"]}
+            {
+                "message": "Registrazione riuscita!",
+                "new-user": {
+                    "id": user_id,
+                    "name": name,
+                    "surname": surname,
+                    "email": email,
+                    "id_city": 0,
+                },
+            }
         ),
-        200,
+        201,
     )
+
+
+@app.route("/get-user/<int:id_user>", methods=["GET"])
+def get_user(id_user):
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM user WHERE id_user = %s", (id_user,))
+        user = cursor.fetchone()
+    connection.close()
+
+    if user:
+        return jsonify(user), 200
+    else:
+        return jsonify({"error": "Utente non trovato"}), 404
 
 
 @app.route("/get-trash/<int:id_trash>", methods=["GET"])
 def get_trash(id_trash):
-    trash = next((t for t in fake_db["trash"] if t["id_trash"] == id_trash), None)
+    connection = get_db_connection()
+
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM trash WHERE id_trash = %s", (id_trash,))
+        trash = cursor.fetchone()
+    connection.close()
 
     if trash:
         return jsonify(trash), 200
