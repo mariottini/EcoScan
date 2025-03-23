@@ -34,19 +34,7 @@ def login():
 
     if user:
         return (
-            jsonify(
-                {
-                    "message": "Login riuscito!",
-                    "token": "fake-jwt-token",
-                    "user": {
-                        "id": user["id_user"],
-                        "name": user["name_user"],
-                        "surname": user["surname_user"],
-                        "email": user["email_user"],
-                        "id_city": user["id_city"],
-                    },
-                }
-            ),
+            jsonify({"message": "Login riuscito!", "user": user}),
             200,
         )
     else:
@@ -60,6 +48,7 @@ def register():
     surname = data.get("surname")
     email = data.get("email")
     password = data.get("password")
+    id_city = 1
 
     if not name or not surname or not email or not password:
         return jsonify({"error": "Campi obbligatori mancanti."}), 400
@@ -68,7 +57,7 @@ def register():
     with connection.cursor() as cursor:
         cursor.execute(
             "INSERT INTO user (name_user, surname_user, email_user, password_user, id_city) VALUES (%s, %s, %s, %s, %s)",
-            (name, surname, email, password, 0),
+            (name, surname, email, password, id_city),
         )
         user_id = cursor.lastrowid
     connection.commit()
@@ -78,17 +67,42 @@ def register():
         jsonify(
             {
                 "message": "Registrazione riuscita!",
-                "new-user": {
-                    "id": user_id,
-                    "name": name,
-                    "surname": surname,
-                    "email": email,
-                    "id_city": 0,
+                "user": {
+                    "id_user": user_id,
+                    "name_user": name,
+                    "surname_user": surname,
+                    "email_user": email,
+                    "password_user": password,
+                    "id_city": id_city,
                 },
             }
         ),
         201,
     )
+
+
+@app.route("/update-city", methods=["PUT"])
+def set_city():
+    data = request.json
+    id_user = data.get("id_user")
+    id_city = data.get("id_city")
+
+    if not id_user:
+        return jsonify({"error": "id_user mancante."}), 400
+
+    if not id_city:
+        return jsonify({"error": "id_city mancante."}), 400
+
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "UPDATE user SET id_city = %s WHERE id_user = %s",
+            (id_city, id_user),
+        )
+        connection.commit()
+    connection.close()
+
+    return jsonify({"message": "Città aggiornata con successo!"}), 200
 
 
 @app.route("/get-user/<int:id_user>", methods=["GET"])
