@@ -8,7 +8,7 @@ import Comune from "./pages/Comune";
 // import Home from "./pages/Home";
 // import Ricerca from "./pages/Ricerca";
 // import Rifiuto from "./pages/Rifiuto";
-// import Servizi from "./pages/Servizi";
+// import Servizi from "./pages/Servizi"; 
 
 function App() {
   return (
