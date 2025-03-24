@@ -9,3 +9,50 @@ body{
   max-width: 390px;
   height: 100vh;
 }
+
+
+/* navbar */
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  background-color: #435F2E;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  height: 60px; 
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+nav img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+nav a:hover img, nav a.active img {
+  filter: invert(62%) sepia(21%) saturate(747%) hue-rotate(57deg);
+}
+
+
+
+
+/* testo del calendario */
+
+.TestoCalendario{
+  text-align: center;
+  padding: 10%;
+
+}
