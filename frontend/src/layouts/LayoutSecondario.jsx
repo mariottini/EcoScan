@@ -5,7 +5,11 @@ function LayoutSecondario() {
 
     <div className="container">
 
-      <Outlet />
+      <div className="content_two">
+
+        <Outlet />
+
+      </div>
 
     </div>
 
