@@ -3,3 +3,5 @@ backend/venv
 
 # Frontend
 frontend/node_modules
+
+.DS_Store
