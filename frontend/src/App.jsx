@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import LayoutSecondario from "./layouts/LayoutSecondario";
 // import Calendario from "./pages/Calendario";
-// import Comune from "./pages/Comune";
+import Comune from "./pages/Comune";
 // import Foto from "./pages/Foto";
 // import Grafico from "./pages/Grafico";
 // import Home from "./pages/Home";
 import Ricerca from "./pages/Ricerca";
 // import Rifiuto from "./pages/Rifiuto";
-// import Servizi from "./pages/Servizi";
+// import Servizi from "./pages/Servizi"; 
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
 
         <Route path="/" element={<LayoutSecondario />}>
           {/* <Route index element={<Home />} /> */}
-          {/* <Route path="/comune" element={<Comune />} /> */}
+          <Route path="/comune" element={<Comune />} />
         </Route>
         
       </Routes>
