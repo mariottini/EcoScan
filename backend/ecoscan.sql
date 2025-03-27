@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 27, 2025 alle 14:23
+-- Creato il: Mar 27, 2025 alle 15:00
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -712,7 +712,8 @@ INSERT INTO `city` (`id_city`, `name`) VALUES
 --
 
 CREATE TABLE `filedata` (
-  `id_filedata` int(11) NOT NULL
+  `id_filedata` int(11) NOT NULL,
+  `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
