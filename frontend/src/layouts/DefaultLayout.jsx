@@ -6,7 +6,9 @@ function DefaultLayout() {
 
     <div className="container">
 
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
   
       <Navbar />
 

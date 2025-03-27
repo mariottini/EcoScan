@@ -1,4 +1,5 @@
-body{
+* {
+  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
@@ -8,4 +9,74 @@ body{
   margin: auto;
   max-width: 390px;
   height: 100vh;
+}
+
+.content{
+  height: calc(100vh - 60px);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+.contenitore_ricerca > h2{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.contenitore_ricerca{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contenitore_ricerca_card{
+  overflow: auto;
+}
+
+.card_ricerca{
+  display: flex;
+  background-color: #F0F0F0;
+  height: 110px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.card_ricerca > div{
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_ricerca > section{
+  width: calc(100% - 110px);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.card_ricerca > section > div{
+  background-color: aquamarine;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.card_ricerca h2{
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+
+.cerca{
+  margin: 0;
+  padding: 0.6rem;
+  outline: 2px solid black;
+  outline-offset: -2px;
+  border-radius: 20px;
+  width:100%;
+  font-size: 18px;
 }
