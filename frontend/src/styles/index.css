@@ -177,7 +177,54 @@ nav a:hover img, nav a.active img {
   filter: invert(62%) sepia(21%) saturate(747%) hue-rotate(57deg);
 }
 
+/* Pagina scan rifiuto */
+.fotocamera{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  margin-bottom: 7%;
+  margin-top: 13%;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 30px;
+}
 
+/* Pagina rifiuto */
+.container_rifiuto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F0F0;
+  
+}
+
+.container_rifiuto > img{
+  width: 120px;
+  height: 120px;
+}
+
+.container_rifiuto > section{
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.container_rifiuto > section > h3{
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.card_rifiuto{
+  display: flex;
+  width: 100%;
+  height: 30vh;
+  background-color: chocolate;
+  border-radius: 25px;
+}
 
 
 /* testo del calendario */

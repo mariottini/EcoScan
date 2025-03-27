@@ -1,8 +1,8 @@
 function Foto() {
   return (
 
-    <div>
-      <p>Ciao sono la pagina Foto</p>
+    <div className="fotocamera">
+      <p>Fotocamera IA</p>
     </div>
 
   )
