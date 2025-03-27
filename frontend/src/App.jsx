@@ -16,13 +16,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<DefaultLayout />}>
-<<<<<<< HEAD
           <Route path="/calendario" element={<Calendario />} />
-          {/* <Route path="/foto" element={<Foto />} /> */}
-=======
-          {/* <Route path="/calendario" element={<Calendario />} /> */}
           <Route path="/foto" element={<Foto />} />
->>>>>>> 45ec3730e576e06ba4eb61242a6d4cd2ea86d0ef
           {/* <Route path="/grafico" element={<Grafico />} /> */}
           <Route path="/ricerca" element={<Ricerca />} />
           <Route path="/rifiuto" element={<Rifiuto />} />
