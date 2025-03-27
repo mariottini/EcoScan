@@ -5,11 +5,10 @@ import LayoutSecondario from "./layouts/LayoutSecondario";
 import Comune from "./pages/Comune";
 import Foto from "./pages/Foto";
 // import Grafico from "./pages/Grafico";
-
 import Home from "./pages/Home";
 import Ricerca from "./pages/Ricerca";
 import Rifiuto from "./pages/Rifiuto";
-
+// import Servizi from "./pages/Servizi"; 
 
 function App() {
   return (
@@ -20,10 +19,8 @@ function App() {
           {/* <Route path="/calendario" element={<Calendario />} /> */}
           <Route path="/foto" element={<Foto />} />
           {/* <Route path="/grafico" element={<Grafico />} /> */}
-
           <Route path="/ricerca" element={<Ricerca />} />
           <Route path="/rifiuto" element={<Rifiuto />} />
-
           {/* <Route path="/servizi" element={<Servizi />} /> */}
         </Route>
 
