@@ -187,3 +187,34 @@ nav a:hover img, nav a.active img {
   padding: 10%;
 
 }
+
+
+
+
+.content {
+  display: flex;
+  flex-direction: column; /* Per disporre tutto in colonna */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centra verticalmente l'intero contenuto */
+}
+
+.DataCalendario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Distanza tra giorno/data e i componenti sottostanti */
+}
+
+.Giorno {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.Data {
+  font-size: 1.2rem;
+  color: grey;
+}
+
+

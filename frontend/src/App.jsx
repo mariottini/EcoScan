@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import LayoutSecondario from "./layouts/LayoutSecondario";
-// import Calendario from "./pages/Calendario";
+import Calendario from "./pages/Calendario";
 import Comune from "./pages/Comune";
 // import Foto from "./pages/Foto";
 // import Grafico from "./pages/Grafico";
@@ -16,7 +16,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<DefaultLayout />}>
-          {/* <Route path="/calendario" element={<Calendario />} /> */}
+          <Route path="/calendario" element={<Calendario />} />
           {/* <Route path="/foto" element={<Foto />} /> */}
           {/* <Route path="/grafico" element={<Grafico />} /> */}
           <Route path="/ricerca" element={<Ricerca />} />

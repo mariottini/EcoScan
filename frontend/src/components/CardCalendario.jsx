@@ -1,11 +1,12 @@
 const CardCalendario = () => {
     return (
       <div>
-        <h1>CardCalendario</h1>
-        {/* Contenuto del componente */}
+        <div className="CardCalendario">♻️</div> 
+        <h3 className="GenereRifiuto">Umido</h3>
       </div>
     );
   };
   
   export default CardCalendario; 
+
   

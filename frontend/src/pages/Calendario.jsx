@@ -10,8 +10,8 @@ function Calendario () {
 
             {/* <DataCalendario /> */}
             <div className="DataCalendario">
-                <h2>Lunedì</h2>
-                <h5>18/03/2025</h5>
+                <h2 className="Giorno">Lunedì</h2>
+                <h5 className="Data">18/03/2025</h5>
             </div>
             <CardCalendario />
             <TestoCalendario />
