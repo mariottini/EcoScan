@@ -295,22 +295,23 @@ nav a.active img {
 
 .TestoCalendario {
 	text-align: center;
-	padding: 10%;
+	padding: 0 10%;
 }
 
 .content {
 	display: flex;
-	flex-direction: column; /* Per disporre tutto in colonna */
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh; /* Centra verticalmente l'intero contenuto */
+	height: 100vh; 
 }
 
 .DataCalendario {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 20px; /* Distanza tra giorno/data e i componenti sottostanti */
+  align-items: baseline;
+	margin-bottom: 20px; 
 }
 
 .Giorno {
@@ -321,5 +322,69 @@ nav a.active img {
 
 .Data {
 	font-size: 1.2rem;
-	color: grey;
+  color: #435f2e;
+  font-weight: 500;
+}
+
+
+.frecciaDX, .frecciaSX {
+	border: none;
+	background-color: transparent;
+	font-size: 2rem;
+	cursor: pointer;
+	margin: 0 30px;
+}
+
+
+.DataCalendario {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	margin-bottom: 20px;
+  margin-top: 75px;
+}
+
+.Giorno {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #435f2e;
+	margin-right: 10px;
+}
+
+.Data {
+	font-size: 1.2rem;
+	color: #435f2e;
+	font-weight: 500;
+}
+
+
+.CardCalendario {
+	background-color: #8b6920;
+	color: white;
+	border-radius: 15px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	height: 400px;
+	justify-content: center;
+  margin: 30px auto;
+}
+
+
+.imgUmido {
+	width: 60%;
+	margin-bottom: 15px;
+}
+
+.RigaCalendario{
+  width: 40%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.GenereRifiuto {
+	font-size: 2.5rem;
+	font-weight: bold;
 }
