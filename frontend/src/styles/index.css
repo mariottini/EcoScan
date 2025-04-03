@@ -17,7 +17,7 @@
   height: calc(100vh - 60px);
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 30px;
+  padding-top: 75px;
 }
 /* CSS LAYOUT SECONDARIO */
 .content_two {
@@ -246,26 +246,24 @@ nav a:hover img, nav a.active img {
 
 .TestoCalendario{
   text-align: center;
-  padding: 10%;
-
+  padding: 5%;
 }
 
 
 
 
-.content {
+/* Calendario */
+.content2 {
   display: flex;
-  flex-direction: column; /* Per disporre tutto in colonna */
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Centra verticalmente l'intero contenuto */
+  flex-direction: column; 
 }
 
 .DataCalendario {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px; /* Distanza tra giorno/data e i componenti sottostanti */
+  margin-bottom: 20px;
+  align-items: baseline;
 }
 
 .Giorno {
@@ -276,7 +274,46 @@ nav a:hover img, nav a.active img {
 
 .Data {
   font-size: 1.2rem;
-  color: grey;
+  color: rgb(89, 88, 88);
+}
+
+.frecciaSX, .frecciaDX {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 
+
+/* Card Calendario */
+.CardCalendario {
+  background-color: #966C0C;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  height: 400px;
+  width: 100%;
+}
+
+.GenereRifiuto{
+  font-size: 2.5rem;
+  padding: 50px;
+}
+
+
+.ContenitoreCardCalendario{
+  padding: 20px;
+}
+
+.imgUmido {
+  padding: 50px;
+}
+
+hr{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
