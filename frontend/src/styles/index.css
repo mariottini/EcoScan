@@ -32,6 +32,10 @@ body {
 	margin: 0px;
 }
 
+::-webkit-scrollbar {
+	all: none;
+}
+
 /* Stili condivisi */
 .container {
 	padding: 0px;
@@ -128,6 +132,23 @@ body {
 	font-size: 18px;
 }
 
+/* Pagina di login */
+
+.card_login form {
+	display: flex;
+	flex-direction: column;
+	background-color: bisque;
+}
+
+.card_login label {
+	margin-bottom: 10px;
+}
+
+.card_login .button_style {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
 /* PROPRIETA CSS PAGINA HOME */
 .home_container {
 	display: flex;
@@ -176,6 +197,10 @@ body {
 
 .comune_container > h2 {
 	margin-top: 6vh;
+}
+
+.comune_container > p {
+	margin-top: 10vh;
 }
 
 .card_selezione_comune {

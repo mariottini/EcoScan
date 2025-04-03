@@ -1,13 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import LayoutSecondario from "./layouts/LayoutSecondario";
+import LayoutArrow from "./layouts/LayoutArrow";
+import Login from "./pages/Login";
 import Calendario from "./pages/Calendario";
 import Comune from "./pages/Comune";
-import Foto from "./pages/Foto";
+// import Foto from "./pages/Foto";
 // import Grafico from "./pages/Grafico";
-import Home from "./pages/Home";
-import Ricerca from "./pages/Ricerca";
-import Rifiuto from "./pages/Rifiuto";
+// import Home from "./pages/Home";
+// import Ricerca from "./pages/Ricerca";
+// import Rifiuto from "./pages/Rifiuto";
 // import Servizi from "./pages/Servizi"; 
 
 function App() {
@@ -19,14 +21,18 @@ function App() {
           <Route path="/calendario" element={<Calendario />} />
           <Route path="/foto" element={<Foto />} />
           {/* <Route path="/grafico" element={<Grafico />} /> */}
-          <Route path="/ricerca" element={<Ricerca />} />
-          <Route path="/rifiuto" element={<Rifiuto />} />
+          {/* <Route path="/ricerca" element={<Ricerca />} /> */}
+          {/* <Route path="/rifiuto" element={<Rifiuto />} /> */}
           {/* <Route path="/servizi" element={<Servizi />} /> */}
         </Route>
 
         <Route path="/" element={<LayoutSecondario />}>
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="/comune" element={<Comune />} />
+        </Route>
+
+        <Route path="/" element={<LayoutArrow />}>
+          <Route path="/login" element={<Login />} />
         </Route>
         
       </Routes>
