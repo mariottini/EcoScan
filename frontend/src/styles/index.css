@@ -25,7 +25,7 @@ body {
 	background-color: var(--background1);
 }
 
-/* Proprieta che togli i stili automatici */
+/*Proprieta che togli i stili automatici */
 * {
 	box-sizing: border-box;
 	padding: 0px;

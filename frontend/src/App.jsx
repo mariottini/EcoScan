@@ -1,44 +1,36 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DefaultLayout from "./layouts/DefaultLayout";
-import LayoutSecondario from "./layouts/LayoutSecondario";
-import LayoutArrow from "./layouts/LayoutArrow";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Calendario from "./pages/Calendario";
-import Comune from "./pages/Comune";
-// import Foto from "./pages/Foto";
-// import Grafico from "./pages/Grafico";
-// import Home from "./pages/Home";
-// import Ricerca from "./pages/Ricerca";
-// import Rifiuto from "./pages/Rifiuto";
-// import Servizi from "./pages/Servizi"; 
+import Register from "./pages/Register";
+import SelectCity from "./pages/SelectCity";
+import InfoServices from "./pages/InfoServices";
+import Calendar from "./pages/Calendar";
+import Search from "./pages/Search";
+import CameraPage from "./pages/CameraPage";
+import Charts from "./pages/Charts";
+import Profile from "./pages/Profile";
+import Trash from "./pages/Trash";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-
-        <Route path="/" element={<DefaultLayout />}>
-          <Route path="/calendario" element={<Calendario />} />
-          <Route path="/foto" element={<Foto />} />
-          {/* <Route path="/grafico" element={<Grafico />} /> */}
-          {/* <Route path="/ricerca" element={<Ricerca />} /> */}
-          {/* <Route path="/rifiuto" element={<Rifiuto />} /> */}
-          {/* <Route path="/servizi" element={<Servizi />} /> */}
-        </Route>
-
-        <Route path="/" element={<LayoutSecondario />}>
-          <Route index element={<Home />} />
-          <Route path="/comune" element={<Comune />} />
-        </Route>
-
-        <Route path="/" element={<LayoutArrow />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
-        
-      </Routes>
-    </Router>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/login" element={[<Header />, <Login />]} />
+				<Route path="/register" element={[<Header />, <Register />]} />
+				<Route path="/select-city" element={[<Header />, <SelectCity />]} />
+				<Route path="/info-services" element={[<Header />, <InfoServices />]} />
+				<Route path="/calendar" element={[<Calendar />, <Navbar />]} />
+				<Route path="/search" element={[<Search />, <Navbar />]} />
+				<Route path="/camera" element={[<CameraPage />, <Navbar />]} />
+				<Route path="/charts" element={[<Charts />, <Navbar />]} />
+				<Route path="/profile" element={[<Profile />, <Navbar />]} />
+				<Route path="/trash" element={[<Header />, <Trash />, <Navbar />]} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
-
 
 export default App;

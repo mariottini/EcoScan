@@ -1,4 +1,4 @@
-import CardRifiuto from "../components/CardRifiuto";
+// import CardRifiuto from "../components/CardRifiuto";
 
 function Trash() {
 	return (
@@ -7,7 +7,7 @@ function Trash() {
 			<h2>Rifiuto</h2>
 			<section>
 				<h3>COME RICICLARE</h3>
-				<CardRifiuto />
+				{/* <CardRifiuto /> */}
 			</section>
 		</div>
 	);
