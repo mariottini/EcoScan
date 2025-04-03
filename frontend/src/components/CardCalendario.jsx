@@ -1,12 +1,12 @@
 const CardCalendario = () => {
     return (
-      <div>
-        <div className="CardCalendario">♻️</div> 
+        <div className="CardCalendario"> <img className="imgUmido" src="/img/umido.svg" alt="icona umido" />
+        <hr />
         <h3 className="GenereRifiuto">Umido</h3>
-      </div>
+        </div> 
     );
   };
   
   export default CardCalendario; 
 
-  
+
