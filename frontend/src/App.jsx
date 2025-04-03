@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import LayoutSecondario from "./layouts/LayoutSecondario";
+import LayoutArrow from "./layouts/LayoutArrow";
+import Login from "./pages/Login";
 import Calendario from "./pages/Calendario";
 import Comune from "./pages/Comune";
 import Foto from "./pages/Foto";
@@ -16,13 +18,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<DefaultLayout />}>
-<<<<<<< HEAD
           <Route path="/calendario" element={<Calendario />} />
-          {/* <Route path="/foto" element={<Foto />} /> */}
-=======
-          {/* <Route path="/calendario" element={<Calendario />} /> */}
           <Route path="/foto" element={<Foto />} />
->>>>>>> 45ec3730e576e06ba4eb61242a6d4cd2ea86d0ef
           {/* <Route path="/grafico" element={<Grafico />} /> */}
           <Route path="/ricerca" element={<Ricerca />} />
           <Route path="/rifiuto" element={<Rifiuto />} />
@@ -30,8 +27,12 @@ function App() {
         </Route>
 
         <Route path="/" element={<LayoutSecondario />}>
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="/comune" element={<Comune />} />
+        </Route>
+
+        <Route path="/" element={<LayoutArrow />}>
+          <Route path="/login" element={<Login />} />
         </Route>
         
       </Routes>

@@ -3,7 +3,7 @@ function CardRicerca() {
 
     <div className="card_ricerca">
       <div>
-        <img></img>
+        <img src="../public/img/Logo.svg"></img>
       </div>
 
       <section>

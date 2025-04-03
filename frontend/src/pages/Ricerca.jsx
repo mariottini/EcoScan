@@ -9,7 +9,7 @@ function Ricerca() {
 
       <div className="contenitore_ricerca_card">
         <CardRicerca />
-        <CardRicerca /><CardRicerca />
+        <CardRicerca /><CardRicerca /><CardRicerca /><CardRicerca />
       </div>
     </div>
 

@@ -5,6 +5,10 @@
   margin: 0px;
 }
 
+::-webkit-scrollbar {
+  all: none;
+}
+
 /* Stili condivisi */
 .container{
   padding: 0px;
@@ -49,6 +53,11 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+}
+
+.card_ricerca img{
+  width: 80px;
 }
 
 .contenitore_ricerca_card{
@@ -59,6 +68,7 @@
   display: flex;
   background-color: #F0F0F0;
   height: 110px;
+  max-height: 110px;
   border-radius: 15px;
   margin-bottom: 15px;
 }
@@ -93,13 +103,31 @@
 
 
 .cerca{
+  border: none;
   margin: 0;
   padding: 0.6rem;
-  outline: 2px solid black;
+  outline: 2.5px solid black;
   outline-offset: -2px;
   border-radius: 20px;
   width:100%;
   font-size: 18px;
+}
+
+/* Pagina di login */
+
+.card_login form{
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+}
+
+.card_login label{
+  margin-bottom: 10px;
+}
+
+.card_login .button_style{
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* PROPRIETA CSS PAGINA HOME */
