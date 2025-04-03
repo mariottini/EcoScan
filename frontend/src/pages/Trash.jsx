@@ -1,13 +1,15 @@
-// import CardRifiuto from "../components/CardRifiuto";
+import CardHint from "../components/CardHint";
+import CardTrash from "../components/CardTrash";
 
 function Trash() {
 	return (
-		<div className="container_rifiuto">
+		<div className="container_trash">
 			<img></img>
 			<h2>Rifiuto</h2>
 			<section>
+				<CardHint />
 				<h3>COME RICICLARE</h3>
-				{/* <CardRifiuto /> */}
+				<CardTrash />
 			</section>
 		</div>
 	);
