@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function Home() {
 	return (
-		<div class="home_container">
+		<div className="home_container">
 			<img src="/img/logo.svg"></img>
 			<h1 className="home-title">EcoScan</h1>
 			<Link to="/login">

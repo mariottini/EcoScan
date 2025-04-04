@@ -1,7 +1,9 @@
-function Header() {
+import { Link } from "react-router-dom";
+
+function Header({ route }) {
 	return (
 		<div className="header">
-			<a href="">←</a>
+			<Link to={route}>←</Link>
 		</div>
 	);
 }

@@ -18,16 +18,25 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/login" element={[<Header />, <Login />]} />
-				<Route path="/register" element={[<Header />, <Register />]} />
-				<Route path="/select-city" element={[<Header />, <SelectCity />]} />
+				<Route path="/login" element={[<Header route={"/"} />, <Login />]} />
+				<Route
+					path="/register"
+					element={[<Header route={"/"} />, <Register />]}
+				/>
+				<Route
+					path="/select-city"
+					element={[<Header route={"/"} />, <SelectCity />]}
+				/>
 				<Route path="/info-services" element={[<Header />, <InfoServices />]} />
 				<Route path="/calendar" element={[<Calendar />, <Navbar />]} />
 				<Route path="/search" element={[<Search />, <Navbar />]} />
 				<Route path="/camera" element={[<CameraPage />, <Navbar />]} />
 				<Route path="/charts" element={[<Charts />, <Navbar />]} />
 				<Route path="/profile" element={[<Profile />, <Navbar />]} />
-				<Route path="/trash" element={[<Header />, <Trash />, <Navbar />]} />
+				<Route
+					path="/trash"
+					element={[<Header route={"/search"} />, <Trash />, <Navbar />]}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);
