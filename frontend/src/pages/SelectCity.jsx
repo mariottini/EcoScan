@@ -2,7 +2,7 @@ function Comune() {
 	return (
 		<>
 			<div className="comune_container">
-				<img className="comune_logo_img" src="/img/Logo.svg" alt="" />
+				<img className="comune_logo_img" src="/img/logo.svg" alt="" />
 				<h2>Seleziona il comune.</h2>
 
 				{/* CARD SELEZIONE COMUNE */}
@@ -18,7 +18,7 @@ function Comune() {
 					</form>
 				</div>
 
-				<p>Più tardi.</p>
+				<a href="/search">Più tardi.</a>
 			</div>
 		</>
 	);
