@@ -34,7 +34,7 @@ function App() {
 				<Route path="/charts" element={[<Charts />, <Navbar />]} />
 				<Route path="/profile" element={[<Profile />, <Navbar />]} />
 				<Route
-					path="/trash"
+					path="/trash/:name"
 					element={[<Header route={"/search"} />, <Trash />, <Navbar />]}
 				/>
 			</Routes>
