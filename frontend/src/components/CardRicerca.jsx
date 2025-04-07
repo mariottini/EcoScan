@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 function CardRicerca({ trash }) {
 	const [category, setCategory] = useState("");
@@ -19,18 +20,20 @@ function CardRicerca({ trash }) {
 	});
 
 	return (
-		<div className="card_ricerca">
-			<div>
-				<img src={trash.image} alt={trash.name} />
-			</div>
-
-			<section>
-				<h2>{trash.name}</h2>
+		<Link to={"/trash/" + trash.name}>
+			<div className="card_ricerca">
 				<div>
-					<h3>{category}</h3>
+					<img src={trash.image} alt={trash.name} />
 				</div>
-			</section>
-		</div>
+
+				<section>
+					<h2>{trash.name}</h2>
+					<div>
+						<h3>{category}</h3>
+					</div>
+				</section>
+			</div>
+		</Link>
 	);
 }
 

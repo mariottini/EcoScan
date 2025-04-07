@@ -1,13 +1,17 @@
-function CardTrash() {
+
+function CardTrash({ trash }) {
+  
 	return (
 		<div className="card_trash">
       
       <div>
-        <img src=""></img>
+       {trash.name_category && 
+        <img src={"/img/" + trash.name_category.toLowerCase().replaceAll(' ', '-') + ".svg"}></img>
+       } 
       </div>
 
       <div>
-			  <h1>VETRO</h1>
+			  <h1>{trash.name_category}</h1>
       </div>
 
 		</div>

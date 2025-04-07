@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@font-face {
+	font-family: DxGrafik;
+	src: url("../../public/fonts/DxGrafik-SemiBold.otf");
+}
+
 :root {
 	--background1: #fcfcfc;
 	--background2: #f0f0f0;
@@ -167,6 +172,7 @@ body {
 	margin-bottom: 20vh;
 	color: #435f2e;
 	font-size: 50px;
+	font-family: DxGrafik;
 }
 
 .home_container > p {
@@ -197,7 +203,7 @@ body {
 
 .comune_container > h2 {
 	margin-top: 6vh;
-	color: #435F2E;
+	color: #435f2e;
 }
 
 .comune_container > a {
@@ -208,7 +214,7 @@ body {
 
 .card_selezione_comune {
 	margin-top: 6vh;
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	border-radius: 25px;
 	width: 35vh;
 }
@@ -240,7 +246,6 @@ body {
 	padding: 6px 15px;
 	align-self: center;
 }
-
 
 /* navbar */
 
@@ -304,7 +309,6 @@ nav a.active img {
 
 .container_trash > h2 {
 	margin-bottom: 15px;
-
 }
 
 .container_trash > img {
@@ -338,35 +342,35 @@ nav a.active img {
 	padding: 25px;
 }
 
-.card_trash h1{
+.card_trash h1 {
 	color: white;
 	text-align: center;
 }
 
-.card_trash > div{
+.card_trash > div {
 	width: 50%;
 }
 
-.card_hint{
+.card_hint {
 	display: flex;
 	width: 100%;
 	height: 15vh;
-	background-image: linear-gradient(to right, #435F2E , #7ABA42);
+	background-image: linear-gradient(to right, #435f2e, #7aba42);
 	border-radius: 15px;
 	padding: 13px;
 }
 
-.card_hint img{
+.card_hint img {
 	width: 10vh;
 }
 
-.card_hint h2{
+.card_hint h2 {
 	font-size: 17px;
 	margin-bottom: 10px;
 	color: white;
 }
 
-.card_hint p{
+.card_hint p {
 	font-size: 13px;
 	color: white;
 }
@@ -383,15 +387,15 @@ nav a.active img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh; 
+	height: 100vh;
 }
 
 .DataCalendario {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  align-items: baseline;
-	margin-bottom: 20px; 
+	align-items: baseline;
+	margin-bottom: 20px;
 }
 
 .Giorno {
@@ -402,12 +406,12 @@ nav a.active img {
 
 .Data {
 	font-size: 1.2rem;
-  color: #435f2e;
-  font-weight: 500;
+	color: #435f2e;
+	font-weight: 500;
 }
 
-
-.frecciaDX, .frecciaSX {
+.frecciaDX,
+.frecciaSX {
 	border: none;
 	background-color: transparent;
 	font-size: 2rem;
@@ -415,23 +419,117 @@ nav a.active img {
 	margin: 0 30px;
 }
 
-
 .DataCalendario {
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
 	margin-bottom: 20px;
-  margin-top: 75px;
+	margin-top: 75px;
 }
 
-.user-profile{
+/* LOGIN */
+
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 90%;
+}
+
+.logo img {
+	width: 100px;
+}
+
+h1 {
+	color: var(--accent1);
+	font-size: 24px;
+	margin-top: 10px;
+	font-family: DxGrafik;
+}
+
+.subtitle {
+	color: var(--accent1);
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+form {
+	text-align: left;
+	background-color: var(--background2);
+	padding: 1rem;
+	border-radius: 25px;
+	margin: 0 40px;
+}
+
+label {
+	display: block;
+	font-size: 14px;
+	margin-top: 10px;
+	color: #333;
+}
+
+input {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.btn {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px;
+	width: 100%;
+	margin: 20px 0 10px 0;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.btn:hover {
+	background-color: #45a049;
+}
+
+.register {
+	font-size: 12px;
+	margin-top: 15px;
+}
+
+.register a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.loginInfo {
+	/* background-color: var(--background1); */
+	border-radius: 10px;
+	color: red;
+	width: 100%;
+	text-align: center;
+	font-size: 0.9rem;
+	margin-top: 5px;
+}
+
+.name-surname-form {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.user-profile {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
 
-.user-avatar{
+.user-avatar {
 	width: 250px;
 	height: 250px;
 	border-radius: 50%;
@@ -439,9 +537,17 @@ nav a.active img {
 	margin-bottom: 5%;
 }
 
+<<<<<<< HEAD
 .edit-icon{
 	width: 70px;
 	height: 70px;
+=======
+.edit-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 2px solid black;
+>>>>>>> 97246667848bab6a021e05ed42bd9fc8af4e9e45
 	cursor: pointer;
 	transition: transform 0.3s ease;
 	position: relative;
@@ -450,25 +556,25 @@ nav a.active img {
 	margin-top: -75px;
 }
 
-.edit-icon:hover{
+.edit-icon:hover {
 	transform: scale(1.2);
 }
 
-.user-info{
+.user-info {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	background-color: rgb(220, 216, 216);
-	border-radius:25px ;
+	border-radius: 25px;
 	gap: 15%;
 	padding: 2%;
 	margin-left: 8%;
 	margin-right: 8%;
 }
 
-.user-identity{
+.user-identity {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -477,7 +583,7 @@ nav a.active img {
 	margin-top: 10%;
 }
 
-.modify-button{
+.modify-button {
 	background-color: #7aba42;
 	border: none;
 	color: white;
@@ -491,11 +597,11 @@ nav a.active img {
 	transition: transform 0.3s ease;
 }
 
-.modify-button:hover{
+.modify-button:hover {
 	transform: scale(1.2);
 }
 
-.favourite-trash{
+.favourite-trash {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -503,13 +609,14 @@ nav a.active img {
 	text-align: center;
 	margin-top: 5%;
 	background-color: rgb(220, 216, 216);
-	border-radius:25px ;
+	border-radius: 25px;
 	gap: 15%;
 	padding: 2%;
 	margin-left: 8%;
 	margin-right: 8%;
 }
 
+<<<<<<< HEAD
 .favourite-title{
 	color: #435F2E;
 }
@@ -580,3 +687,8 @@ nav a.active img {
 	width: 50%;
 	margin: 20px auto 0; 
   }
+=======
+.favourite-title {
+	color: #435f2e;
+}
+>>>>>>> 97246667848bab6a021e05ed42bd9fc8af4e9e45
