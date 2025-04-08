@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Trash from "./pages/Trash";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import Modify_Profile from "./pages/Modify_Profile";
 
 function App() {
 	return (
@@ -33,10 +34,15 @@ function App() {
 				<Route path="/camera" element={[<CameraPage />, <Navbar />]} />
 				<Route path="/charts" element={[<Charts />, <Navbar />]} />
 				<Route path="/profile" element={[<Profile />, <Navbar />]} />
+<<<<<<< HEAD
+				<Route path="/trash" element={[<Header />, <Trash />, <Navbar />]} />
+				<Route path="/Modify_Profile" element={[<Modify_Profile/>, <Navbar />]} />
+=======
 				<Route
-					path="/trash"
+					path="/trash/:name"
 					element={[<Header route={"/search"} />, <Trash />, <Navbar />]}
 				/>
+>>>>>>> 97246667848bab6a021e05ed42bd9fc8af4e9e45
 			</Routes>
 		</BrowserRouter>
 	);
