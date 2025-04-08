@@ -10,23 +10,34 @@ function Camera() {
 		setImage(screenshot);
 	};
 
+	const loadImage = () => {
+		console.log("Image loded!");
+	};
+
 	return (
-		<div>
+		<div className="webcam-container">
 			{!image ? (
 				<>
 					<Webcam
 						audio={false}
 						ref={webcamRef}
 						screenshotFormat="image/jpeg"
-						width={400}
-						height={300}
+						className="webcam"
+						screenshotQuality={1}
 					/>
-					<button onClick={capture}>Scatta Foto</button>
+					<button onClick={capture} className="snap-btn">
+						<img src="/img/fotocamera.svg" alt="" />
+					</button>
 				</>
 			) : (
 				<>
-					<img src={image} alt="Scatto" />
-					<button onClick={() => setImage(null)}>Riprova</button>
+					<img src={image} alt="Scatto" className="webcam" />
+					<button onClick={() => loadImage()} className="snap-btn">
+						<img src="/img/check.svg" alt="" />
+					</button>
+					<button onClick={() => setImage(null)} className="cancel-btn">
+						<img src="/img/cancel.svg" alt="" />
+					</button>
 				</>
 			)}
 		</div>

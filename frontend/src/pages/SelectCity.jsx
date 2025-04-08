@@ -1,26 +1,24 @@
 function Comune() {
 	return (
-		<>
-			<div className="comune_container">
-				<img className="comune_logo_img" src="/img/logo.svg" alt="" />
-				<h2>Seleziona il comune.</h2>
-
-				{/* CARD SELEZIONE COMUNE */}
-				<div className="card_selezione_comune">
-					<form action="" method="" className="form_selezione_comune">
-						<label for="selezione_comune">Comune</label>
-						<select name="selezione_comune" id="selezione_comune">
-							<option value="">Seleziona il comune...</option>
-							<option value="">Verona</option>
-							<option value="">Villafranca</option>
-						</select>
-						<button className="button_style">Conferma</button>
-					</form>
-				</div>
-
-				<a href="/search">Più tardi.</a>
+		<div className="home-container select-city">
+			<div className="logo-container">
+				<img src="/img/logo.svg" alt="Logo" className="logo" />
+				<h2 className="subtitle">Seleziona il comune.</h2>
 			</div>
-		</>
+
+			<form action="" method="">
+				<div>
+					<label for="selezione_comune">Comune</label>
+					<select name="selezione_comune" id="selezione_comune">
+						<option value="">Seleziona il comune...</option>
+						<option value="">Verona</option>
+						<option value="">Villafranca</option>
+					</select>
+				</div>
+				<button className="button-style">Conferma</button>
+			</form>
+			<a href="/camera">Più tardi.</a>
+		</div>
 	);
 }
 

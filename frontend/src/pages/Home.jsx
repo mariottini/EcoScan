@@ -2,21 +2,27 @@ import { Link } from "react-router";
 
 function Home() {
 	return (
-		<div className="home_container">
-			<img src="/img/logo.svg"></img>
-			<h1 className="home-title">EcoScan</h1>
-			<Link to="/login">
-				<button className="button_style">Accedi</button>
-			</Link>
-			<p>
-				Non hai un account?{" "}
-				<Link to="/register">
-					<a href="">Registrati!</a>
+		<div className="home-container">
+			<div className="logo-container">
+				<img src="/img/logo.svg" className="logo"></img>
+				<h1 className="title">EcoScan</h1>
+			</div>
+			<div className="links-container">
+				<div className="main">
+					<Link to="/login">
+						<button className="home-btn">Accedi</button>
+					</Link>
+					<p>
+						Non hai un account?{" "}
+						<Link to="/register">
+							<a href="">Registrati!</a>
+						</Link>
+					</p>
+				</div>
+				<Link to="/select-city">
+					<a>Accedi come ospite.</a>
 				</Link>
-			</p>
-			<Link to="/search">
-				<a>Accedi come ospite.</a>
-			</Link>
+			</div>
 		</div>
 	);
 }

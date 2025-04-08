@@ -21,44 +21,48 @@ function Login() {
 		if (response.ok) {
 			setMessage(data.message);
 			console.log("dati utente: ", data.user);
-			navigate("/search");
+			navigate("/camera");
 		} else {
 			setMessage(data.error);
 		}
 	};
 
 	return (
-		<div className="loginContainer">
-			<div className="logo">
-				<img src="/img/logo.svg" alt="Logo" />
+		<div className="home-container login">
+			<div className="logo-container">
+				<img src="/img/logo.svg" alt="Logo" className="logo" />
+				<h1 className="title">Ciao!</h1>
+				<p className="subtitle">Accedi al tuo account.</p>
 			</div>
-			<h1>Ciao!</h1>
-			<p className="subtitle">Accedi al tuo account.</p>
 			<form onSubmit={handleLogin}>
-				<label htmlFor="email">E-mail</label>
-				<input
-					type="email"
-					id="email"
-					placeholder="user@example.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					required
-				/>
-				<label htmlFor="password">Password</label>
-				<input
-					type="password"
-					id="password"
-					placeholder="********"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					required
-				/>
+				<div>
+					<label htmlFor="email">E-mail</label>
+					<input
+						type="email"
+						id="email"
+						placeholder="user@example.com"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+					/>
+				</div>
+				<div>
+					<label htmlFor="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						placeholder="********"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						required
+					/>
+				</div>
 				<button type="submit" className="btn">
 					Accedi
 				</button>
-				<p className="loginInfo">{message}</p>
+				<p className="login-info">{message}</p>
 			</form>
-			<p className="register">
+			<p>
 				Non hai un account?{" "}
 				<Link to="/register">
 					<u>Registrati!</u>

@@ -23,19 +23,19 @@ function Register() {
 		if (response.ok) {
 			setMessage(data.message);
 			console.log("dati utente: ", data.user);
-			navigate("/search");
+			navigate("/camera");
 		} else {
 			setMessage(data.error);
 		}
 	};
 
 	return (
-		<div className="loginContainer">
-			<div className="logo">
-				<img src="/img/logo.svg" alt="Logo" />
+		<div className="home-container register">
+			<div className="logo-container">
+				<img src="/img/logo.svg" alt="Logo" className="logo" />
+				<h1 className="title">Benvenuto!</h1>
+				<p className="subtitle">Crea il tuo account.</p>
 			</div>
-			<h1>Benvenuto!</h1>
-			<p className="subtitle">Crea il tuo account.</p>
 			<form onSubmit={handleRegister}>
 				<div className="name-surname-form">
 					<div>
@@ -61,29 +61,33 @@ function Register() {
 						/>
 					</div>
 				</div>
-				<label htmlFor="email">E-mail</label>
-				<input
-					type="email"
-					id="email"
-					placeholder="user@example.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					required
-				/>
-				<label htmlFor="password">Password</label>
-				<input
-					type="password"
-					id="password"
-					placeholder="********"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					required
-				/>
+				<div>
+					<label htmlFor="email">E-mail</label>
+					<input
+						type="email"
+						id="email"
+						placeholder="user@example.com"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+					/>
+				</div>
+				<div>
+					<label htmlFor="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						placeholder="********"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						required
+					/>
+				</div>
 				<button type="submit" className="btn">
 					Registrati
 				</button>
 			</form>
-			<p className="register">
+			<p>
 				Hai già un account?{" "}
 				<Link to="/login">
 					<u>Accedi!</u>

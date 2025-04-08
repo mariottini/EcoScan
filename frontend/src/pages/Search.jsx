@@ -17,9 +17,9 @@ function Search() {
 	};
 
 	return (
-		<div className="contenitore_ricerca">
+		<div className="search-container">
 			<SearchBar onSearch={fetchData} />
-			<h2>Recenti:</h2>
+			{/* <h2>Recenti:</h2> */}
 
 			<div className="contenitore_ricerca_card">
 				{trashData.length > 0 ? (
