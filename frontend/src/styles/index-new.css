@@ -24,6 +24,13 @@
 	--paddingLR: 40px;
 }
 
+/* 1vh = 7.016 */
+
+a:-webkit-any-link {
+	text-decoration: none;
+	cursor: pointer;
+}
+
 body {
 	margin: 0;
 	font-family: "Inter", sans-serif;
@@ -34,10 +41,8 @@ body {
 	/* overflow: hidden; */
 }
 
-/* 1vh = 7.016 */
-
 #root {
-	height: var(--displayHeight);
+	min-height: var(--displayHeight);
 	width: var(--displayWidth);
 	background-color: var(--background1);
 	padding: 0 var(--paddingLR);
@@ -233,8 +238,8 @@ nav {
 
 nav img {
 	width: 1.7rem;
-	/* width: 24px; */
 	height: 1.7rem;
+	/* width: 24px; */
 	/* height: 24px; */
 	filter: brightness(0) invert(1);
 	transition: 0.3s;
@@ -292,6 +297,69 @@ nav img {
 	filter: brightness(0) invert(1);
 }
 
+.searchbar {
+	padding: 5px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 2vh;
+}
+
 .search-container {
 	padding-top: var(--paddingLR);
+	display: flex;
+	flex-direction: column;
+}
+
+.search-card-container {
+	margin-bottom: 8.5vh;
+}
+
+.card-search {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--background2);
+	border-radius: 15px;
+	height: 21vh;
+	margin: 3vh 0;
+}
+
+.card-search * {
+	text-decoration: none;
+}
+
+.card-search img {
+	aspect-ratio: 1/1;
+	height: 15vh;
+	padding: 0 3vh;
+}
+
+.card-search div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3vh 3vh 3vh 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card-search div h2 {
+	margin: 0;
+	margin-top: 3vh;
+	width: 100%;
+}
+
+.card-search div h4 {
+	font-size: 0.8rem;
+	margin: 0;
+	margin-bottom: 3vh;
+	background-color: blue;
+	padding: 1vh 2vh;
+	color: white;
+	border-radius: 10px;
 }

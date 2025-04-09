@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-function CardRicerca({ trash }) {
+function CardSearch({ trash }) {
 	const [category, setCategory] = useState("");
 
 	useEffect(() => {
@@ -21,20 +21,15 @@ function CardRicerca({ trash }) {
 
 	return (
 		<Link to={"/trash/" + trash.name}>
-			<div className="card_ricerca">
+			<div className="card-search">
+				<img src={trash.image} alt={trash.name} />
 				<div>
-					<img src={trash.image} alt={trash.name} />
-				</div>
-
-				<section>
 					<h2>{trash.name}</h2>
-					<div>
-						<h3>{category}</h3>
-					</div>
-				</section>
+					<h4>{category}</h4>
+				</div>
 			</div>
 		</Link>
 	);
 }
 
-export default CardRicerca;
+export default CardSearch;

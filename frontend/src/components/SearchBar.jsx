@@ -10,7 +10,7 @@ function SearchBar({ onSearch }) {
 
 	return (
 		<input
-			className="cerca"
+			className="searchbar"
 			type="text"
 			placeholder="Cerca.."
 			value={query}

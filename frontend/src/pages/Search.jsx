@@ -1,5 +1,5 @@
 import SearchBar from "../components/SearchBar";
-import CardRicerca from "../components/CardRicerca";
+import CardRicerca from "../components/CardSearch";
 
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ function Search() {
 			<SearchBar onSearch={fetchData} />
 			{/* <h2>Recenti:</h2> */}
 
-			<div className="contenitore_ricerca_card">
+			<div className="search-card-container">
 				{trashData.length > 0 ? (
 					trashData.map((item) => (
 						<CardRicerca key={item.id_trash} trash={item} />
