@@ -1,19 +1,17 @@
-
 function CardTrash({ trash }) {
-  
 	return (
-		<div className="card_trash">
-      
-      <div>
-       {trash.name_category && 
-        <img src={"/img/" + trash.name_category.toLowerCase().replaceAll(' ', '-') + ".svg"}></img>
-       } 
-      </div>
+		<div className="card-trash">
+			{trash.name_category && (
+				<img
+					src={
+						"/img/" +
+						trash.name_category.toLowerCase().replaceAll(" ", "-") +
+						".svg"
+					}
+				></img>
+			)}
 
-      <div>
-			  <h1>{trash.name_category}</h1>
-      </div>
-
+			<h2>{trash.name_category}</h2>
 		</div>
 	);
 }

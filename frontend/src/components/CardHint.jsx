@@ -1,13 +1,13 @@
-function CardHint({trash}) {
+function CardHint({ trash }) {
 	return (
-		<div className="card_hint">
+		<div className="card-hint">
 			<div>
-        <h2>Consiglio sostenibile</h2>
+				<h2>Consiglio sostenibile</h2>
 				<p>{trash.hint_text}</p>
 			</div>
-			<div>
+			{/* <div>
 				<img src=""></img>
-			</div>
+			</div> */}
 		</div>
 	);
 }
