@@ -538,12 +538,18 @@ input {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
 .edit-icon{
 	width: 70px;
 	height: 70px;
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 .edit-icon {
 	width: 50px;
@@ -551,6 +557,10 @@ input {
 	border-radius: 50%;
 	border: 2px solid black;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -623,9 +633,12 @@ input {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .favourite-title {
 	color: #435f2e;
 =======
+=======
+>>>>>>> Stashed changes
 .favourite-title{
 	color: #435F2E;
 >>>>>>> Stashed changes
@@ -695,7 +708,11 @@ input[type="text"] {
 	width: 50%;
 	margin: 20px auto 0;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
+=======
+  }
+>>>>>>> Stashed changes
 =======
   }
 >>>>>>> Stashed changes
