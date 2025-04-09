@@ -537,11 +537,23 @@ input {
 	margin-bottom: 5%;
 }
 
+<<<<<<< Updated upstream
+=======
+
+.edit-icon{
+	width: 70px;
+	height: 70px;
+}
+>>>>>>> Stashed changes
 .edit-icon {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 	border: 2px solid black;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	cursor: pointer;
 	transition: transform 0.3s ease;
 	position: relative;
@@ -610,8 +622,13 @@ input {
 	margin-right: 8%;
 }
 
+<<<<<<< Updated upstream
 .favourite-title {
 	color: #435f2e;
+=======
+.favourite-title{
+	color: #435F2E;
+>>>>>>> Stashed changes
 }
 
 .favourite-list {
@@ -677,4 +694,8 @@ input[type="text"] {
 	display: block;
 	width: 50%;
 	margin: 20px auto 0;
+<<<<<<< Updated upstream
 }
+=======
+  }
+>>>>>>> Stashed changes
