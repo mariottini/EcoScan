@@ -34,21 +34,13 @@ function App() {
 				<Route path="/camera" element={[<CameraPage />, <Navbar />]} />
 				<Route path="/charts" element={[<Charts />, <Navbar />]} />
 				<Route path="/profile" element={[<Profile />, <Navbar />]} />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 				<Route path="/edit-profile" element={[<EditProfile />, <Navbar />]} />
 				<Route
 					path="/trash/:name"
 					element={[<Header route={"/search"} />, <Trash />, <Navbar />]}
 				/>
-=======
 				<Route path="/trash" element={[<Header />, <Trash />, <Navbar />]} />
-				<Route path="/Modify_Profile" element={[<Modify_Profile/>, <Navbar />]} />
->>>>>>> Stashed changes
-=======
 				<Route path="/trash" element={[<Header />, <Trash />, <Navbar />]} />
-				<Route path="/Modify_Profile" element={[<Modify_Profile/>, <Navbar />]} />
->>>>>>> Stashed changes
 			</Routes>
 		</BrowserRouter>
 	);

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 27, 2025 alle 15:00
--- Versione del server: 10.4.32-MariaDB
--- Versione PHP: 8.2.12
+-- Generation Time: Apr 09, 2025 at 05:35 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `advice`
+-- Table structure for table `advice`
 --
 
 CREATE TABLE `advice` (
@@ -34,7 +34,7 @@ CREATE TABLE `advice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `advice`
+-- Dumping data for table `advice`
 --
 
 INSERT INTO `advice` (`id_advice`, `text`, `id_trash`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `advice` (`id_advice`, `text`, `id_trash`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `calendar`
+-- Table structure for table `calendar`
 --
 
 CREATE TABLE `calendar` (
@@ -62,7 +62,7 @@ CREATE TABLE `calendar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `calendar`
+-- Dumping data for table `calendar`
 --
 
 INSERT INTO `calendar` (`id_calendar`, `day`, `id_category`, `id_week`, `id_city`) VALUES
@@ -665,7 +665,7 @@ INSERT INTO `calendar` (`id_calendar`, `day`, `id_category`, `id_week`, `id_city
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -674,7 +674,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id_category`, `name`) VALUES
@@ -688,7 +688,7 @@ INSERT INTO `category` (`id_category`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `city`
+-- Table structure for table `city`
 --
 
 CREATE TABLE `city` (
@@ -697,7 +697,7 @@ CREATE TABLE `city` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `city`
+-- Dumping data for table `city`
 --
 
 INSERT INTO `city` (`id_city`, `name`) VALUES
@@ -708,7 +708,7 @@ INSERT INTO `city` (`id_city`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `filedata`
+-- Table structure for table `filedata`
 --
 
 CREATE TABLE `filedata` (
@@ -719,7 +719,7 @@ CREATE TABLE `filedata` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `trash`
+-- Table structure for table `trash`
 --
 
 CREATE TABLE `trash` (
@@ -730,23 +730,23 @@ CREATE TABLE `trash` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `trash`
+-- Dumping data for table `trash`
 --
 
 INSERT INTO `trash` (`id_trash`, `name`, `image`, `id_category`) VALUES
-(1, 'Cartone per alimenti', '/images/trash/cartone_alimenti.jpg', 1),
-(2, 'Bottiglia di plastica', '/images/trash/bottiglia_plastica.jpg', 4),
-(3, 'Bicchiere di vetro', '/images/trash/bicchiere_vetro.jpg', 3),
-(4, 'Bottiglia di vetro', '/images/trash/bottiglia_vetro.jpg', 6),
-(5, 'Alimento avariato', '/images/trash/alimento_avariato.jpg', 2),
-(6, 'Foglie', '/images/trash/foglie.jpg', 5),
-(7, 'Lattina', '/images/trash/lattina.jpg', 4),
-(8, 'Posate in metallo', '/images/trash/posate_metallo.jpg', 4);
+(1, 'Cartone per alimenti', '/img/cartone-alimenti.png', 1),
+(2, 'Bottiglia di plastica', '/img/bottiglia-plastica.png', 4),
+(3, 'Bicchiere di vetro', '/img/bicchiere-vetro.png', 3),
+(4, 'Bottiglia di vetro', '/img/bottiglia-vetro.png', 6),
+(5, 'Alimento avariato', '/img/avanzo.png', 2),
+(6, 'Foglie', '/img/foglia.png', 5),
+(7, 'Lattina', '/img/lattina.png', 4),
+(8, 'Posate in metallo', '/img/posate.png', 4);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -759,7 +759,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `name`, `surname`, `email`, `password`, `id_city`) VALUES
@@ -771,7 +771,7 @@ INSERT INTO `user` (`id_user`, `name`, `surname`, `email`, `password`, `id_city`
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `user_trash`
+-- Table structure for table `user_trash`
 --
 
 CREATE TABLE `user_trash` (
@@ -782,7 +782,7 @@ CREATE TABLE `user_trash` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `week`
+-- Table structure for table `week`
 --
 
 CREATE TABLE `week` (
@@ -792,7 +792,7 @@ CREATE TABLE `week` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `week`
+-- Dumping data for table `week`
 --
 
 INSERT INTO `week` (`id_week`, `date_start`, `date_end`) VALUES
@@ -855,18 +855,18 @@ INSERT INTO `week` (`id_week`, `date_start`, `date_end`) VALUES
 (57, '2026-01-26', '2026-01-31');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `advice`
+-- Indexes for table `advice`
 --
 ALTER TABLE `advice`
   ADD PRIMARY KEY (`id_advice`),
   ADD KEY `id_trash` (`id_trash`);
 
 --
--- Indici per le tabelle `calendar`
+-- Indexes for table `calendar`
 --
 ALTER TABLE `calendar`
   ADD PRIMARY KEY (`id_calendar`),
@@ -875,114 +875,114 @@ ALTER TABLE `calendar`
   ADD KEY `id_week` (`id_week`);
 
 --
--- Indici per le tabelle `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id_category`);
 
 --
--- Indici per le tabelle `city`
+-- Indexes for table `city`
 --
 ALTER TABLE `city`
   ADD PRIMARY KEY (`id_city`);
 
 --
--- Indici per le tabelle `filedata`
+-- Indexes for table `filedata`
 --
 ALTER TABLE `filedata`
   ADD PRIMARY KEY (`id_filedata`);
 
 --
--- Indici per le tabelle `trash`
+-- Indexes for table `trash`
 --
 ALTER TABLE `trash`
   ADD PRIMARY KEY (`id_trash`),
   ADD KEY `id_category` (`id_category`);
 
 --
--- Indici per le tabelle `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `id_city` (`id_city`);
 
 --
--- Indici per le tabelle `user_trash`
+-- Indexes for table `user_trash`
 --
 ALTER TABLE `user_trash`
   ADD KEY `id_trash` (`id_trash`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indici per le tabelle `week`
+-- Indexes for table `week`
 --
 ALTER TABLE `week`
   ADD PRIMARY KEY (`id_week`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `advice`
+-- AUTO_INCREMENT for table `advice`
 --
 ALTER TABLE `advice`
   MODIFY `id_advice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT per la tabella `calendar`
+-- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
   MODIFY `id_calendar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=596;
 
 --
--- AUTO_INCREMENT per la tabella `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT per la tabella `city`
+-- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
   MODIFY `id_city` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT per la tabella `filedata`
+-- AUTO_INCREMENT for table `filedata`
 --
 ALTER TABLE `filedata`
   MODIFY `id_filedata` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `trash`
+-- AUTO_INCREMENT for table `trash`
 --
 ALTER TABLE `trash`
   MODIFY `id_trash` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT per la tabella `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT per la tabella `week`
+-- AUTO_INCREMENT for table `week`
 --
 ALTER TABLE `week`
   MODIFY `id_week` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `advice`
+-- Constraints for table `advice`
 --
 ALTER TABLE `advice`
   ADD CONSTRAINT `advice_ibfk_1` FOREIGN KEY (`id_trash`) REFERENCES `trash` (`id_trash`);
 
 --
--- Limiti per la tabella `calendar`
+-- Constraints for table `calendar`
 --
 ALTER TABLE `calendar`
   ADD CONSTRAINT `calendar_ibfk_3` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`),
@@ -990,19 +990,19 @@ ALTER TABLE `calendar`
   ADD CONSTRAINT `calendar_ibfk_5` FOREIGN KEY (`id_week`) REFERENCES `week` (`id_week`);
 
 --
--- Limiti per la tabella `trash`
+-- Constraints for table `trash`
 --
 ALTER TABLE `trash`
   ADD CONSTRAINT `trash_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`);
 
 --
--- Limiti per la tabella `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_city`) REFERENCES `city` (`id_city`);
 
 --
--- Limiti per la tabella `user_trash`
+-- Constraints for table `user_trash`
 --
 ALTER TABLE `user_trash`
   ADD CONSTRAINT `user_trash_ibfk_1` FOREIGN KEY (`id_trash`) REFERENCES `trash` (`id_trash`),

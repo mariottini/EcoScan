@@ -22,7 +22,7 @@ ChartJS.register(
 	Legend
 );
 
-const LineChart = () => {
+function LineChart() {
 	const data = {
 		labels: [
 			"2004",
@@ -88,6 +88,6 @@ const LineChart = () => {
 	};
 
 	return <Line data={data} options={options} height={"100%"} />;
-};
+}
 
 export default LineChart;

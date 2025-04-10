@@ -1,23 +1,30 @@
 import CardCalendario from "../components/CardCalendario";
-import TestoCalendario from "../components/TestoCalendario";
 
 function Calendario() {
-	// chaiamta al backend
-
 	return (
-		<div className="content2">
-			{/* <DataCalendario /> */}
-			<div className="DataCalendario">
-				<button className="frecciaSX">{"<"}</button>
-				<h2 className="Giorno">Lunedì</h2>
-				<h5 className="Data">18/03/2025</h5>
-				<button className="frecciaDX">{">"}</button>
+		<div className="calendar-container">
+			<div className="calendar-date">
+				<button className="arrow">
+					<img src="/img/arrow-back.svg" />
+				</button>
+				<h2 className="day">Lunedì</h2>
+				<h5 className="date">18/03/2025</h5>
+				<button className="arrow">
+					<img src="/img/arrow-forward.svg" />
+				</button>
 			</div>
-
-			<div className="ContenitoreCardCalendario">
+			<div className="card-calendar-container">
 				<CardCalendario />
 			</div>
-			<TestoCalendario />
+			<p className="calendar-text">
+				Sacchi e contenitori dei rifiuti vanno posizionati all’esterno della
+				propria abitazione
+				<strong>
+					{" "}
+					sulla pubblica via, dopo le 21.00 ed entro le 24.00
+				</strong>{" "}
+				del giorno precedente la raccolta prevista dal calendario.
+			</p>
 		</div>
 	);
 }

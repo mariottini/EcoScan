@@ -47,8 +47,7 @@ function Trash() {
 	return (
 		<div className="trash-container">
 			<div className="trash-img">
-				{/* <img src={trash.image} alt={trash.name}></img> */}
-				<img src="/img/umido.svg" alt={trash.name}></img>
+				<img src={trash.image} alt={trash.name}></img>
 				<h2>{trash.name}</h2>
 			</div>
 			<div className="trash-info">

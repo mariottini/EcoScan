@@ -1,12 +1,11 @@
-const CardCalendario = () => {
+function CardCalendario() {
 	return (
-		<div className="CardCalendario">
-			{" "}
-			<img className="imgUmido" src="/img/umido.svg" alt="icona umido" />
-			<hr className="RigaCalendario"/>
-			<h3 className="GenereRifiuto">Umido</h3>
+		<div className="card-calendar">
+			<img src="/img/umido.svg" alt="icona umido" />
+			<hr />
+			<h2>Umido</h2>
 		</div>
 	);
-};
+}
 
 export default CardCalendario;
