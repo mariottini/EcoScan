@@ -156,7 +156,8 @@ a {
 
 .home-container.login form,
 .home-container.register form,
-.home-container.select-city form {
+.home-container.select-city form,
+.user-container form {
 	background-color: var(--background2);
 	width: calc(44.2vh - 8vh);
 	padding: 4.3vh;
@@ -170,7 +171,8 @@ a {
 
 .home-container.login form div,
 .home-container.register form div,
-.home-container.select-city form div {
+.home-container.select-city form div,
+.user-container form div {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -179,7 +181,9 @@ a {
 
 .home-container.login form input,
 .home-container.register form input,
-.home-container.select-city form select {
+.home-container.select-city form select,
+.user-container form input,
+.user-container form select {
 	padding: 5px 20px;
 	display: inline-block;
 	border: 1px solid #ccc;
@@ -187,13 +191,15 @@ a {
 	box-sizing: border-box;
 }
 
-.home-container.register form div.name-surname-form {
+.home-container.register form div.name-surname-form,
+.user-container form div.name-surname-form {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.home-container.register form div.name-surname-form div {
+.home-container.register form div.name-surname-form div,
+.user-container form div.name-surname-form div {
 	width: 45%;
 }
 
@@ -205,6 +211,14 @@ a {
 	border: none;
 	border-radius: 50px;
 	padding: 15px 35px;
+	color: white;
+}
+
+.user-container form button {
+	background-color: var(--accent2);
+	border: none;
+	border-radius: 50px;
+	padding: 10px 25px;
 	color: white;
 }
 
@@ -432,7 +446,7 @@ nav img {
 	align-items: center;
 	width: 100%;
 	/* height: 27vh; */
-	background-color: #304298;
+	background-color: blue;
 	border-radius: 15px;
 	padding: 2vh 0;
 }
@@ -472,15 +486,6 @@ nav img {
 	font-size: 0.8rem;
 	margin: 1vh 2vh;
 }
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-/* testo del calendario */
 
 .calendar-container {
 	display: flex;
@@ -542,7 +547,7 @@ nav img {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: #304298;
+	background-color: blue;
 	border-radius: 15px;
 }
 
@@ -564,15 +569,92 @@ nav img {
 	font-size: 2rem;
 }
 
+.user-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2vh;
+	width: 100%;
+	height: calc(var(--displayHeight) - var(--paddingLR) - 10.5vh);
+	padding-top: var(--paddingLR);
+}
+
+.user-img {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-img .propic {
+	height: 25vh;
+}
+
+.user-img .edit-icon {
+	text-align: right;
+	transform: translateY(-8.5vh) translateX(2vh);
+	cursor: pointer;
+	height: 0vh;
+}
+
+.user-info-container {
+	background-color: var(--background2);
+	width: calc(44.2vh - 8vh);
+	padding: 3vh;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2vh;
+}
+
+.user-info-container * {
+	margin: 0;
+}
+
+.user-info-container .edit-btn {
+	background-color: var(--accent2);
+	border: none;
+	border-radius: 50px;
+	padding: 10px 25px;
+	color: white;
+	cursor: pointer;
+}
+
+.user-info-container .favourites-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2vh;
+}
+
+.user-info-container .favourites-container .favourite-icon {
+	width: 8vh;
+	aspect-ratio: 1/1;
+}
+
+.edit-user {
+	gap: 5vh;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
 /* LOGIN */
 
-.loginContainer {
+/* .loginContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	height: 90%;
-}
+} */
 /*
 .logo img {
 	width: 100px;
@@ -659,7 +741,7 @@ input {
 	gap: 1rem;
 }
 */
-.user-profile {
+/* .user-profile {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -814,4 +896,4 @@ h3 {
 	display: block;
 	width: 50%;
 	margin: 20px auto 0;
-}
+} */

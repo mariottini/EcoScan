@@ -34,7 +34,10 @@ function App() {
 				<Route path="/camera" element={[<CameraPage />, <Navbar />]} />
 				<Route path="/charts" element={[<Charts />, <Navbar />]} />
 				<Route path="/profile" element={[<Profile />, <Navbar />]} />
-				<Route path="/edit-profile" element={[<EditProfile />, <Navbar />]} />
+				<Route
+					path="/edit-profile"
+					element={[<Header route={"/profile"} />, <EditProfile />, <Navbar />]}
+				/>
 				<Route
 					path="/trash/:name"
 					element={[<Header route={"/search"} />, <Trash />, <Navbar />]}

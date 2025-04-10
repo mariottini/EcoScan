@@ -31,18 +31,16 @@ function EditProfile() {
 	};
 
 	return (
-		<>
-			<div className="user-profile">
+		<div className="user-container edit-user">
+			<div className="user-img">
 				<img
-					src={image || "./public/img/user-page.svg"}
+					src={image || "/img/user-page.svg"}
 					alt="User Avatar"
-					className="user-avatar"
+					className="propic"
 				/>
-
 				<label htmlFor="file-upload" className="edit-icon">
-					<img src="./public/img/edit-user-page.svg" alt="edit" />
+					<img src="/img/edit-user-page.svg" alt="edit" />
 				</label>
-
 				<input
 					type="file"
 					id="file-upload"
@@ -51,8 +49,27 @@ function EditProfile() {
 					accept="image/*"
 				/>
 			</div>
-
-			<div className="form-container">
+			<form>
+				<div className="name-surname-form">
+					<div>
+						<label htmlFor="name">Nome</label>
+						<input type="text" id="name" placeholder="Name" required />
+					</div>
+					<div>
+						<label htmlFor="surname">Cognome</label>
+						<input type="text" id="surname" placeholder="Surname" required />
+					</div>
+				</div>
+				<select name="selezione_comune" id="selezione_comune">
+					<option value="">Seleziona il comune...</option>
+					<option value="">Verona</option>
+					<option value="">Villafranca</option>
+				</select>
+				<button type="submit" className="btn">
+					Conferma
+				</button>
+			</form>
+			{/* <div className="form-container">
 				<div className="name-surname-container">
 					<div className="form-name">
 						<h3>Nome</h3>
@@ -93,8 +110,8 @@ function EditProfile() {
 					className="modify-button confirm-button"
 					onClick={handleSubmit} // Azzera i campi al clic
 				/>
-			</div>
-		</>
+			</div> */}
+		</div>
 	);
 }
 
