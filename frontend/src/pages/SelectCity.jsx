@@ -17,7 +17,9 @@ function Comune() {
 				</div>
 				<button className="button-style">Conferma</button>
 			</form>
-			<a href="/camera">Più tardi.</a>
+			<a href="/camera">
+				<u>Più tardi.</u>
+			</a>
 		</div>
 	);
 }

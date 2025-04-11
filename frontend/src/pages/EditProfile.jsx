@@ -1,10 +1,53 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function EditProfile() {
 	const [image, setImage] = useState(null);
 	const [nome, setNome] = useState("");
 	const [cognome, setCognome] = useState("");
 	const [comune, setComune] = useState("");
+	const [cities, setCities] = useState([]);
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			const response = await fetch("http://localhost:5000/get-user/1");
+			const data = await response.json();
+			setNome(data.name);
+			setCognome(data.surname);
+			setComune(data.id_city);
+		};
+
+		const fetchCities = async () => {
+			const response = await fetch("http://localhost:5000/get-city");
+			const data = await response.json();
+			setCities(data);
+		};
+
+		fetchUser();
+		fetchCities();
+	}, []); // <-- importante: array vuoto per evitare loop
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const response = await fetch("http://localhost:5000/update-user/1", {
+			method: "PUT",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+				name: nome,
+				surname: cognome,
+				id_city: parseInt(comune), // converto in int per sicurezza
+			}),
+		});
+
+		if (response.ok) {
+			console.log("Dati aggiornati!");
+			navigate("/profile");
+		} else {
+			console.error("Errore nell'aggiornamento");
+		}
+	};
 
 	// Gestione cambiamento immagine
 	const handleImageChange = (e) => {
@@ -16,18 +59,6 @@ function EditProfile() {
 			};
 			reader.readAsDataURL(file);
 		}
-	};
-
-	// Funzione per svuotare i form
-	const handleSubmit = () => {
-		// Azzera i valori dei form
-		setNome("");
-		setCognome("");
-		setComune("");
-
-		// Puoi aggiungere la logica per inviare i dati se necessario
-
-		console.log("Dati inviati:", { nome, cognome, comune });
 	};
 
 	return (
@@ -49,68 +80,49 @@ function EditProfile() {
 					accept="image/*"
 				/>
 			</div>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<div className="name-surname-form">
 					<div>
 						<label htmlFor="name">Nome</label>
-						<input type="text" id="name" placeholder="Name" required />
+						<input
+							type="text"
+							id="name"
+							placeholder="Name"
+							value={nome}
+							onChange={(e) => setNome(e.target.value)}
+							required
+						/>
 					</div>
 					<div>
 						<label htmlFor="surname">Cognome</label>
-						<input type="text" id="surname" placeholder="Surname" required />
+						<input
+							type="text"
+							id="surname"
+							placeholder="Surname"
+							value={cognome}
+							onChange={(e) => setCognome(e.target.value)}
+							required
+						/>
 					</div>
 				</div>
-				<select name="selezione_comune" id="selezione_comune">
+				<select
+					name="selezione_comune"
+					id="selezione_comune"
+					value={comune}
+					onChange={(e) => setComune(e.target.value)}
+					required
+				>
 					<option value="">Seleziona il comune...</option>
-					<option value="">Verona</option>
-					<option value="">Villafranca</option>
+					{cities.map((city) => (
+						<option key={city.id_city} value={city.id_city}>
+							{city.name ? city.name : "Nessun comune selezionato"}
+						</option>
+					))}
 				</select>
 				<button type="submit" className="btn">
 					Conferma
 				</button>
 			</form>
-			{/* <div className="form-container">
-				<div className="name-surname-container">
-					<div className="form-name">
-						<h3>Nome</h3>
-						<input
-							type="text"
-							id="nome"
-							name="nome"
-							value={nome}
-							onChange={(e) => setNome(e.target.value)} // Gestione cambiamento
-						/>
-					</div>
-					<div className="form-surname">
-						<h3>Cognome</h3>
-						<input
-							type="text"
-							id="cognome"
-							name="cognome"
-							value={cognome}
-							onChange={(e) => setCognome(e.target.value)} // Gestione cambiamento
-						/>
-					</div>
-				</div>
-
-				<div className="form-city">
-					<h3>Comune</h3>
-					<input
-						type="text"
-						id="comune"
-						name="comune"
-						value={comune}
-						onChange={(e) => setComune(e.target.value)} // Gestione cambiamento
-					/>
-				</div>
-
-				<input
-					type="button"
-					value="Conferma"
-					className="modify-button confirm-button"
-					onClick={handleSubmit} // Azzera i campi al clic
-				/>
-			</div> */}
 		</div>
 	);
 }

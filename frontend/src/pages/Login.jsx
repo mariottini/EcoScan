@@ -6,6 +6,7 @@ function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
+	const [isActive, setIsActive] = useState(false);
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -23,6 +24,7 @@ function Login() {
 			console.log("dati utente: ", data.user);
 			navigate("/camera");
 		} else {
+			setIsActive(!isActive);
 			setMessage(data.error);
 		}
 	};
@@ -60,7 +62,9 @@ function Login() {
 				<button type="submit" className="btn">
 					Accedi
 				</button>
-				<p className="login-info">{message}</p>
+				<p className={isActive ? "login-info active" : "login-info"}>
+					{message}
+				</p>
 			</form>
 			<p>
 				Non hai un account?{" "}

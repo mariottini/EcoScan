@@ -15,12 +15,16 @@ function Home() {
 					<p>
 						Non hai un account?{" "}
 						<Link to="/register">
-							<a href="">Registrati!</a>
+							<a href="">
+								<u>Registrati!</u>
+							</a>
 						</Link>
 					</p>
 				</div>
 				<Link to="/select-city">
-					<a>Accedi come ospite.</a>
+					<a>
+						<u>Accedi come ospite.</u>
+					</a>
 				</Link>
 			</div>
 		</div>

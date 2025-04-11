@@ -1,10 +1,14 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useReducer } from "react";
 
 function Profile() {
-	const [profileImage, setProfileImage] = useState("/img/user-page.svg");
-	const trashTypes = ["food", "plastic", "paper", "metal", "glass", "paper"];
 	const navigate = useNavigate();
+	const trashTypes = ["food", "plastic", "paper", "metal", "glass", "paper"]; // temporary
+	const [profileImage, setProfileImage] = useState("/img/user-page.svg");
+
+	const userId = 1; // temporary
+	const [userData, setUserData] = useState(null);
+	const [cityName, setCityName] = useState("");
 
 	const handleClick = () => {
 		navigate("/edit-profile");
@@ -21,12 +25,45 @@ function Profile() {
 		}
 	};
 
+	useEffect(() => {
+		const fetchUserAndCity = async () => {
+			try {
+				const userResponse = await fetch(
+					`http://localhost:5000/get-user/${userId}`
+				);
+				if (!userResponse.ok) {
+					throw new Error("Errore nel recupero dei dati");
+				}
+				const user = await userResponse.json();
+				setUserData(user);
+				// if (data.profile_image_url) {
+				// 	setProfileImage(data.profile_image_url);
+				// }
+
+				if (user.id_city) {
+					const cityResponse = await fetch(
+						`http://localhost:5000/get-city/${user.id_city}`
+					);
+					if (!cityResponse.ok) {
+						throw new Error("Errore città");
+					}
+					const city = await cityResponse.json();
+					setCityName(city.name);
+				}
+			} catch (error) {
+				console.error("Errore durante la fetch:", error);
+			}
+		};
+
+		fetchUserAndCity();
+	}, []);
+
 	return (
 		<div className="user-container">
 			<div className="user-img">
 				<img src={profileImage} alt="user-propic" className="propic" />
 				<label htmlFor="file-upload" className="edit-icon">
-					<img src="./public/img/edit-user-page.svg" alt="edit" />
+					<img src="/img/edit-user-page.svg" alt="edit" />
 				</label>
 				<input
 					type="file"
@@ -37,8 +74,10 @@ function Profile() {
 				/>
 			</div>
 			<div className="user-info-container">
-				<h3 className="name-surname">Nome Cognome</h3>
-				<h4 className="city">Comune</h4>
+				<h3 className="name-surname">
+					{userData ? `${userData.name} ${userData.surname}` : "Caricamento..."}
+				</h3>
+				<h4 className="city">{cityName || "Comune non selezionato!"}</h4>
 				<button className="edit-btn" onClick={handleClick}>
 					Modifica
 				</button>

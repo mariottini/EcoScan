@@ -334,6 +334,28 @@ def set_city():
     return jsonify({"message": "Città aggiornata con successo!"}), 200
 
 
+@app.route("/update-user/<int:id_user>", methods=["PUT"])
+def update_user(id_user):
+    data = request.json
+    name = data.get("name")
+    surname = data.get("surname")
+    id_city = data.get("id_city")
+
+    if not all([name, surname, id_city]):
+        return jsonify({"error": "Dati mancanti"}), 400
+
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "UPDATE user SET name = %s, surname = %s, id_city = %s WHERE id_user = %s",
+            (name, surname, id_city, id_user),
+        )
+        connection.commit()
+    connection.close()
+
+    return jsonify({"message": "Utente aggiornato con successo"}), 200
+
+
 @app.route("/insert-user_trash", methods=["POST"])
 def insert_user_trash():
     data = request.json
