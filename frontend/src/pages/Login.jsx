@@ -22,7 +22,7 @@ function Login() {
 		if (response.ok) {
 			setMessage(data.message);
 			console.log("dati utente: ", data.user);
-			navigate("/camera");
+			navigate("/select-city");
 		} else {
 			setIsActive(!isActive);
 			setMessage(data.error);

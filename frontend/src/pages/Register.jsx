@@ -23,7 +23,7 @@ function Register() {
 		if (response.ok) {
 			setMessage(data.message);
 			console.log("dati utente: ", data.user);
-			navigate("/camera");
+			navigate("/select-city");
 		} else {
 			setMessage(data.error);
 		}
