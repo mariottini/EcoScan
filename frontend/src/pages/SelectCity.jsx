@@ -6,7 +6,6 @@ function SelectCity() {
 	const [cities, setCities] = useState([]);
 	const navigate = useNavigate();
 
-	// 👇 Per ora hardcoded, ma puoi prendere l'id_user da context o localStorage
 	const id_user = 1;
 
 	useEffect(() => {
