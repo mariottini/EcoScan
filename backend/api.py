@@ -219,7 +219,9 @@ def get_calendar(id_city):
     connection = get_db_connection()
 
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM calendar WHERE id_city = %s", (id_city))
+        cursor.execute(
+            "SELECT * FROM calendar WHERE id_city = %s ORDER BY id_calendar", (id_city)
+        )
         calendar = cursor.fetchall()
     connection.close()
 

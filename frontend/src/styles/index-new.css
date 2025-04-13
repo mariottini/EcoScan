@@ -45,7 +45,7 @@
 	background-color: var(--secco);
 }
 
-.plastica-lattine {
+.plastica-e-lattine {
 	background-color: var(--plastica-lattine);
 }
 
@@ -549,6 +549,8 @@ nav img {
 	color: var(--accent1);
 	font-size: 2rem;
 	margin: 0;
+	width: 22vh;
+	text-align: center;
 }
 
 .date {
@@ -585,7 +587,6 @@ nav img {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: blue;
 	border-radius: 15px;
 }
 
